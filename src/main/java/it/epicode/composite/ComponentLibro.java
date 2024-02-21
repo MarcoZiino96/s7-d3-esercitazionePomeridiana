@@ -1,5 +1,5 @@
 package it.epicode.composite;
 
-public interface InterfacePagina {
+public interface ComponentLibro {
     public abstract  void stampaPagina();
 }
