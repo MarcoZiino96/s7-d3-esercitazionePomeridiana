@@ -25,7 +25,11 @@ public class Main {
         page5.stampaPagina();
 
         System.out.println("++++++++++++++++++++++++++++++++++++++++++++++");
-        Sezione sezione = new Sezione(List.of(page,page1,page2));
+
+        Sezione sottosezione = new Sezione(List.of(page1,page2,page3));
+        Sezione sottosezione1 = new Sezione(List.of(page4,page5));
+
+        Sezione sezione = new Sezione(List.of(page,page1,page2,sottosezione,sottosezione1));
         Sezione sezione1 = new Sezione(List.of(page3,page4,page5));
 
         System.out.println(sezione);
@@ -39,6 +43,6 @@ public class Main {
 
         Libro libro= new Libro(List.of(sezione,sezione1), List.of("marco","emanuele"), 25);
         System.out.println(libro);
-        libro.getNumeroPagine();
+        System.out.println(libro.getNumeroPagine());
     }
 }
