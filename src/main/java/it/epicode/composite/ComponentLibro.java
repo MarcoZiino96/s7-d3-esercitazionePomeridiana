@@ -1,5 +1,5 @@
 package it.epicode.composite;
 
 public interface ComponentLibro {
-    public abstract  void stampaPagina();
+    public abstract int getNumeroPagine();
 }

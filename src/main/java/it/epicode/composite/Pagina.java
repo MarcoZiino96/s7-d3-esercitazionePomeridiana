@@ -2,7 +2,7 @@ package it.epicode.composite;
 
 public class Pagina implements ComponentLibro {
     private String contenuto;
-    @Override
+
     public void stampaPagina() {
         System.out.println(contenuto);
     }
@@ -20,5 +20,10 @@ public class Pagina implements ComponentLibro {
         return "Pagina{" +
                 "pagina=" + contenuto +
                 '}';
+    }
+
+    @Override
+    public int getNumeroPagine() {
+        return 1;
     }
 }

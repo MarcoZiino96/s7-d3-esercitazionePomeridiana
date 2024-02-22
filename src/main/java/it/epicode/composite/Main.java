@@ -39,7 +39,6 @@ public class Main {
 
         Libro libro= new Libro(List.of(sezione,sezione1), List.of("marco","emanuele"), 25);
         System.out.println(libro);
-        libro.stampaPagina();
         libro.getNumeroPagine();
     }
 }

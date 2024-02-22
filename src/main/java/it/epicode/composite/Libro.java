@@ -3,25 +3,33 @@ package it.epicode.composite;
 import java.util.List;
 
 public class Libro implements ComponentLibro {
-    private List<Sezione> sezioni;
+
+    private List<ComponentLibro> componenti;
     private List<String> autori;
     private int prezzo;
 
     @Override
     public String toString() {
         return "Libro{" +
-                "sezioni=" + sezioni +
+                "sezioni=" + componenti +
                 ", autori=" + autori +
                 ", prezzo=" + prezzo +
                 '}';
     }
 
-    public List<Sezione> getSezioni() {
-        return sezioni;
+
+    public Libro(List<ComponentLibro> componenti, List<String> autori, int prezzo) {
+        this.componenti = componenti;
+        this.autori = autori;
+        this.prezzo = prezzo;
     }
 
-    public void setSezioni(List<Sezione> sezioni) {
-        this.sezioni = sezioni;
+    public List<ComponentLibro> getComponenti() {
+        return componenti;
+    }
+
+    public void setComponenti(List<ComponentLibro> componenti) {
+        this.componenti = componenti;
     }
 
     public List<String> getAutori() {
@@ -40,18 +48,8 @@ public class Libro implements ComponentLibro {
         this.prezzo = prezzo;
     }
 
-    public Libro(List<Sezione> sezioni, List<String> autori, int prezzo) {
-        this.sezioni = sezioni;
-        this.autori = autori;
-        this.prezzo = prezzo;
-    }
-
-    public void getNumeroPagine(){
-        System.out.println(sezioni.stream().mapToInt(Sezione::getNumeroPagine).sum());
-    }
     @Override
-    public void stampaPagina() {
-        sezioni.stream().map(Sezione::getPagine).forEach(System.out::println);
+    public int getNumeroPagine() {
+       return componenti.stream().mapToInt(ComponentLibro::getNumeroPagine).sum();
     }
-
 }
